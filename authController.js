@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator')
 const {secret} = require("./config")
+const path = require('path')
 
 const generateAccessToken = (id, roles) => {
     const payload = {
@@ -68,6 +69,11 @@ class authController {
         } catch (e) {
             console.log(e)
         }
+    }
+
+    async getAllUsers(req, res) {
+        const users = await User.find()
+        res.render('users', {users: users});
     }
 }
 
