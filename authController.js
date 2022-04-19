@@ -75,6 +75,10 @@ class authController {
         const users = await User.find()
         res.render('users', {users: users});
     }
+
+    async getAuthorizationPage(req, res) {
+        res.render('authorization', {helloText: 'Hello from Warsaw!'});
+    }
 }
 
 module.exports = new authController()

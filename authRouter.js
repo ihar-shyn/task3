@@ -11,5 +11,6 @@ router.post('/registration', [
 router.post('/login', controller.login)
 router.get('/users', controller.getUsers)
 router.get('/allUsers', controller.getAllUsers)
+router.get('/authorization', controller.getAuthorizationPage)
 
 module.exports = router
